@@ -3,5 +3,6 @@
 - 🌱 I’m currently learning Google Cloud Platform.
 
 
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=DucMinhNgo&theme=nord_bright)
 ![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=DucMinhNgo&theme=nord_bright) 
 ![](http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=DucMinhNgo&theme=nord_bright)
