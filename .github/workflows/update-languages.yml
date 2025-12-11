@@ -18,7 +18,7 @@ jobs:
 
       - name: Build languages.json
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         run: |
           curl -s -H "Authorization: token $TOKEN" "https://api.github.com/users/DucMinhNgo/repos?per_page=200" \
           | jq -r '.[].languages_url' \
