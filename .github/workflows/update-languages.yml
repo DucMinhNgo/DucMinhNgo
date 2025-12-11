@@ -52,8 +52,14 @@ jobs:
 
       - name: Update README.md
         run: |
-          TABLE=$(cat LANGS.md)
-          sed -i '/<!-- LANG-TABLE-START -->/,/<!-- LANG-TABLE-END -->/c\<!-- LANG-TABLE-START -->\n'"$TABLE"'\n<!-- LANG-TABLE-END -->' README.md
+          awk -v block="$(cat LANGS.md)" '
+            /<!-- LANG-TABLE-START -->/ { print; print block; flag=1; next }
+            /<!-- LANG-TABLE-END -->/   { flag=0; print; next }
+            !flag
+          ' README.md > README.new
+
+          mv README.new README.md
+
 
       - name: Commit & Push
         run: |
