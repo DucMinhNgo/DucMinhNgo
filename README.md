@@ -12,10 +12,6 @@
 
 ## 📊 Language Table (All Repositories)
 
-Tự động cập nhật mỗi ngày từ GitHub API.
-
-| Language | Bytes |
-|---------|-------|
 <!-- LANG-TABLE-START -->
 | Language | Bytes |
 |---------|-------|
