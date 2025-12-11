@@ -63,8 +63,8 @@ jobs:
 
       - name: Commit & Push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name 'DucMinhNgo' || true
+          git config --global user.email 'ducminhngo1998@gmail.com' || true
           git add .
           git commit -m "Update languages data" || echo "No changes"
           git push
