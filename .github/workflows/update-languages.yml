@@ -68,3 +68,5 @@ jobs:
           git add .
           git commit -m "Update languages data" || echo "No changes"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
