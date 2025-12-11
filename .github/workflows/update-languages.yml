@@ -1,0 +1,59 @@
+name: Update GitHub Language Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # chạy hằng ngày
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq gnuplot
+
+      - name: Build languages.json
+        run: |
+          curl -s "https://api.github.com/users/USERNAME/repos?per_page=200" \
+          | jq -r '.[].languages_url' \
+          | xargs -I {} curl -s {} \
+          | jq -s 'add | to_entries | sort_by(-.value)' > languages.json
+
+      - name: Generate LANGS.md table
+        run: |
+          echo "| Language | Bytes |" > LANGS.md
+          echo "|---------|-------|" >> LANGS.md
+          jq -r '.[] | "| \(.key) | \(.value) |"' languages.json >> LANGS.md
+
+      - name: Generate SVG chart (LANGS.svg)
+        run: |
+          jq -r '.[] | "\(.key) \(.value)"' languages.json > data.txt
+
+          gnuplot -e "
+            set terminal svg size 900,600;
+            set output 'LANGS.svg';
+            set boxwidth 0.5;
+            set style fill solid;
+            set xtics rotate by -40;
+            set grid ytics;
+            plot 'data.txt' using 2:xtic(1) with boxes title 'Languages';
+          "
+
+      - name: Update README.md
+        run: |
+          TABLE=$(cat LANGS.md)
+          sed -i '/<!-- LANG-TABLE-START -->/,/<!-- LANG-TABLE-END -->/c\<!-- LANG-TABLE-START -->\n'"$TABLE"'\n<!-- LANG-TABLE-END -->' README.md
+
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update languages data" || echo "No changes"
+          git push
