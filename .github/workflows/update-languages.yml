@@ -1,8 +1,6 @@
 name: Update GitHub Language Stats
 
 on:
-  schedule:
-    - cron: "0 0 * * *"   # chạy hằng ngày
   workflow_dispatch:
 
 jobs:
@@ -19,18 +17,18 @@ jobs:
           sudo apt-get install -y jq gnuplot
 
       - name: Build languages.json
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -s "https://api.github.com/users/DucMinhNgo/repos?per_page=200" \
+          curl -s -H "Authorization: token $TOKEN" "https://api.github.com/users/DucMinhNgo/repos?per_page=200" \
           | jq -r '.[].languages_url' \
-          | xargs -I {} curl -s {} \
+          | xargs -I {} curl -s -H "Authorization: token $TOKEN" {} \
           | jq -s '
-              # chỉ giữ JSON dạng object (loại bỏ string)
               map(select(type=="object"))
               | add
               | to_entries
               | sort_by(-.value)
           ' > languages.json
-
 
       - name: Generate LANGS.md table
         run: |
