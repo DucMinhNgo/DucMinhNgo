@@ -20,7 +20,7 @@ jobs:
 
       - name: Build languages.json
         run: |
-          curl -s "https://api.github.com/users/USERNAME/repos?per_page=200" \
+          curl -s "https://api.github.com/users/DucMinhNgo/repos?per_page=200" \
           | jq -r '.[].languages_url' \
           | xargs -I {} curl -s {} \
           | jq -s 'add | to_entries | sort_by(-.value)' > languages.json
