@@ -1,0 +1,126 @@
+[
+  {
+    "key": "HTML",
+    "value": 1502336
+  },
+  {
+    "key": "SCSS",
+    "value": 1350137
+  },
+  {
+    "key": "JavaScript",
+    "value": 759013
+  },
+  {
+    "key": "C++",
+    "value": 604173
+  },
+  {
+    "key": "C#",
+    "value": 403455
+  },
+  {
+    "key": "CSS",
+    "value": 250204
+  },
+  {
+    "key": "Liquid",
+    "value": 148290
+  },
+  {
+    "key": "Java",
+    "value": 121378
+  },
+  {
+    "key": "Blade",
+    "value": 82568
+  },
+  {
+    "key": "PHP",
+    "value": 52838
+  },
+  {
+    "key": "Ruby",
+    "value": 23445
+  },
+  {
+    "key": "TypeScript",
+    "value": 20704
+  },
+  {
+    "key": "CMake",
+    "value": 19829
+  },
+  {
+    "key": "Cuda",
+    "value": 17006
+  },
+  {
+    "key": "C",
+    "value": 16437
+  },
+  {
+    "key": "Vue",
+    "value": 14145
+  },
+  {
+    "key": "Rust",
+    "value": 13633
+  },
+  {
+    "key": "Makefile",
+    "value": 9580
+  },
+  {
+    "key": "Python",
+    "value": 8639
+  },
+  {
+    "key": "TeX",
+    "value": 4551
+  },
+  {
+    "key": "Cython",
+    "value": 2577
+  },
+  {
+    "key": "Objective-C",
+    "value": 2287
+  },
+  {
+    "key": "Shell",
+    "value": 2223
+  },
+  {
+    "key": "PowerShell",
+    "value": 1751
+  },
+  {
+    "key": "Solidity",
+    "value": 1404
+  },
+  {
+    "key": "Jupyter Notebook",
+    "value": 865
+  },
+  {
+    "key": "Objective-C++",
+    "value": 746
+  },
+  {
+    "key": "Procfile",
+    "value": 456
+  },
+  {
+    "key": "Go",
+    "value": 290
+  },
+  {
+    "key": "Pug",
+    "value": 275
+  },
+  {
+    "key": "Dockerfile",
+    "value": 251
+  }
+]
