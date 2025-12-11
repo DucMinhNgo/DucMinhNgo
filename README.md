@@ -2,11 +2,24 @@
 - 👀 I’m interested in Go, Python, Javascript.
 - 🌱 I’m currently learning Google Cloud Platform, Ensemble learning.
 
-curl -s "https://api.github.com/users/DucMinhNgo/repos?per_page=200" \
-  | jq -r '.[].languages_url' \
-  | xargs -I {} curl -s {} \
-  | jq -s 'add | to_entries | sort_by(-.value)' \
-  | jq -r '(["| Language | Bytes |","|---:|---:|"] | .[]), (.[] | "| \(.key) | \(.value) |")'
+# GitHub Language Overview
+
+## 🎨 Language Distribution (All Repositories)
+
+![Language Chart](./LANGS.svg)
+
+---
+
+## 📊 Language Table (All Repositories)
+
+Tự động cập nhật mỗi ngày từ GitHub API.
+
+| Language | Bytes |
+|---------|-------|
+<!-- LANG-TABLE-START -->
+Đang cập nhật dữ liệu...
+<!-- LANG-TABLE-END -->
+
 
 
 
