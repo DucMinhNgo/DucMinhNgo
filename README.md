@@ -6,7 +6,7 @@
 ![Languages Count](https://img.shields.io/github/languages/count/OWNER/REPO)
 
 <!-- Top languages (compact) - dịch vụ bên thứ 3 -->
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&repo=REPO&layout=compact)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DucMinhNgo&repo=REPO&layout=compact)
 
 
 <p align="center">
