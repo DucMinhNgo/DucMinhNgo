@@ -2,11 +2,12 @@
 - 👀 I’m interested in Go, Python, Javascript.
 - 🌱 I’m currently learning Google Cloud Platform, Ensemble learning.
 
-<!-- Số ngôn ngữ -->
-![Languages Count](https://img.shields.io/github/languages/count/OWNER/REPO)
+curl -s "https://api.github.com/users/DucMinhNgo/repos?per_page=200" \
+  | jq -r '.[].languages_url' \
+  | xargs -I {} curl -s {} \
+  | jq -s 'add | to_entries | sort_by(-.value)' \
+  | jq -r '(["| Language | Bytes |","|---:|---:|"] | .[]), (.[] | "| \(.key) | \(.value) |")'
 
-<!-- Top languages (compact) - dịch vụ bên thứ 3 -->
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=DucMinhNgo&repo=REPO&layout=compact)
 
 
 <p align="center">
